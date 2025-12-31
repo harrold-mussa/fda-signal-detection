@@ -6,3 +6,14 @@ The OpenFDA has an API that has significant amounts of data of its recall enforc
 
 Insights and recommendations are provided on the following key areas:
 
+## Project Flowchart
+
+```mermaid
+graph LR
+    A[OpenFDA API] -->|Python Requests| B(Jupyter Notebook)
+    B -->|Data Cleaning| C{Pandas Processing}
+    C -->|Flattening JSON| D[Clean CSV/Parquet]
+    C -->|Statistical Analysis| E[PRR Calculation]
+    D & E -->|Import| F[Power BI Desktop]
+    F -->|DAX Modeling| G[Interactive Dashboard]
+    G -->|Insight| H[Safety Signal Detected]
